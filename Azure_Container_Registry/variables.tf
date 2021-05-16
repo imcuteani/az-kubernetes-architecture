@@ -33,17 +33,16 @@ variable "Resource_group_tags" {
   default     = { OWNER = "Anindita Basak", Origin = "az-database", ReasonCreated = "certification" }
   description = "The Azure Resource group tags"
 }
-variable "azure_public_ip_name" {
-  type = string
-  description = "The Azure Public IP address"
+variable "acr_name" {
+ type = string
+ desdescription = "The Azure container registry name"  
 }
-
-variable "azurerm_lb_name" {
+variable "azurerm_user_identity_name" {
   type = string
-  description = "The Azure Load balancer name"
+  description = "The Azure user identity name"
+
 }
-
-variable "azurerm_frontend_ip_name" {
+variable "azurerm_kv_name" {
   type = string
-  description = "The Azure Load balancer front-end IP address name"
+  description = "The Azure Key Vault name"
 }
