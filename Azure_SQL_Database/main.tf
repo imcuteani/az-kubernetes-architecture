@@ -51,5 +51,13 @@ resource "azurerm_sql_database" "example" {
 
     }
 
+terraform {
+  backend "remote" {
+    organization = "Woodgroove"
 
+    workspaces {
+      name = "git-actions-aks-demo"
+    }
+  }
+}
 

@@ -29,3 +29,13 @@ resource "azurerm_lb" "example" {
  }
  sku = "Standard"
 }
+
+terraform {
+  backend "remote" {
+    organization = "Woodgroove"
+
+    workspaces {
+      name = "git-actions-aks-demo"
+    }
+  }
+}

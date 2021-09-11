@@ -69,3 +69,13 @@ resource "azurerm_kubernetes_cluster_node_pool" "example" {
   }
 
 }
+
+terraform {
+  backend "remote" {
+    organization = "Woodgroove"
+
+    workspaces {
+      name = "git-actions-aks-demo"
+    }
+  }
+}

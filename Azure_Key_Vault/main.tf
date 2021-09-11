@@ -57,3 +57,13 @@ resource "azurerm_key_vault_secret" "example" {
     key_vault_id = azurerm_key_vault.example.id
   
 }
+
+terraform {
+  backend "remote" {
+    organization = "Woodgroove"
+
+    workspaces {
+      name = "git-actions-aks-demo"
+    }
+  }
+}

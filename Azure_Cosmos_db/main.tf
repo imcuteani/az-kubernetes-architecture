@@ -54,3 +54,12 @@ resource "azurerm_cosmosdb_sql_database" "example" {
     throughput = "${var.cosmos_db_throughput}"
 }
 
+terraform {
+  backend "remote" {
+    organization = "Woodgroove"
+
+    workspaces {
+      name = "git-actions-aks-demo"
+    }
+  }
+}

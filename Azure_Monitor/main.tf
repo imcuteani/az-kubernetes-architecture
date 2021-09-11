@@ -74,3 +74,13 @@ data "azurerm_log_analytics_workspace" "example" {
   name                = azurerm_log_analytics_wsname
   resource_group_name = azurerm_resource_group.example.name
 }
+
+terraform {
+  backend "remote" {
+    organization = "Woodgroove"
+
+    workspaces {
+      name = "git-actions-aks-demo"
+    }
+  }
+}

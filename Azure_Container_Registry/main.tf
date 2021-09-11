@@ -41,3 +41,13 @@ data "azurerm_key_vault" "example" {
   name  = "${var.azurerm_kv_name}"
   key_vault_id = data.azurerm_key_vault.existing.id
 }
+
+terraform {
+  backend "remote" {
+    organization = "Woodgroove"
+
+    workspaces {
+      name = "git-actions-aks-demo"
+    }
+  }
+}
